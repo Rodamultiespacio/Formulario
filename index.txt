@@ -1,0 +1,86 @@
+<!-- Formulario Técnico de Inscripción - Roda Feria -->
+<form id="registro-feriante" class="form-container" action="/api/inscripciones" method="POST" enctype="multipart/form-data">
+    
+    <!-- Bloque 1: Identidad del Emprendedor -->
+    <fieldset class="form-section">
+        <legend class="section-title">1. Datos del Feriante</legend>
+        
+        <div class="input-group">
+            <label for="nombre-completo">Nombre y Apellido del Responsable *</label>
+            <input type="text" id="nombre-completo" name="nombre_completo" required placeholder="Ej. María Laura" aria-required="true">
+        </div>
+
+        <div class="input-group">
+            <label for="telefono-whatsapp">Teléfono de Contacto (WhatsApp) *</label>
+            <input type="tel" id="telefono-whatsapp" name="telefono_whatsapp" required placeholder="Ej. 2804XXXXXX" aria-required="true">
+        </div>
+
+        <div class="input-group">
+            <label for="email-contacto">Correo Electrónico *</label>
+            <input type="email" id="email-contacto" name="email_contacto" required placeholder="nombre@correo.com">
+        </div>
+    </fieldset>
+
+    <!-- Bloque 2: El Proyecto / Marca -->
+    <fieldset class="form-section">
+        <legend class="section-title">2. Perfil de la Marca</legend>
+
+        <div class="input-group">
+            <label for="nombre-marca">Nombre del Emprendimiento *</label>
+            <input type="text" id="nombre-marca" name="nombre_marca" required placeholder="Ej. Patagonia Diseño">
+        </div>
+
+        <div class="input-group">
+            <label for="categoria-rubro">Rubro Principal *</label>
+            <select id="categoria-rubro" name="categoria_rubro" required>
+                <option value="">Seleccioná una categoría</option>
+                <option value="indumentaria">Diseño de Indumentaria / Textil</option>
+                <option value="artesanias">Artesanías / Elementos Únicos</option>
+                <option value="gastronomia">Gastronomía / Pastelería</option>
+                <option value="deco">Decoración y Hogar</option>
+                <option value="otros">Otros Emprendimientos</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="redes-sociales">Enlace a Instagram / Facebook de la marca *</label>
+            <input type="url" id="redes-sociales" name="redes_sociales" required placeholder="https://instagram.com">
+        </div>
+    </fieldset>
+
+    <!-- Bloque 3: Logística y Espacio en el Multiespacio -->
+    <fieldset class="form-section">
+        <legend class="section-title">3. Requerimientos de Stand</legend>
+
+        <div class="input-group-checkbox">
+            <p class="label-style">Tipo de Elemento de Exposición (Manta, Mesa, Stand Propio) *</p>
+            <label><input type="radio" name="tipo_armado" value="mesa" required> Requiere espacio para Mesa / Perchero</label>
+            <label><input type="radio" name="tipo_armado" value="stand"> Stand / Estructura Propia Armada</label>
+        </div>
+
+        <div class="input-group">
+            <label for="necesidad-electrica">¿Requiere conexión eléctrica para iluminación o equipos? *</label>
+            <select id="necesidad-electrica" name="necesidad_electrica" required>
+                <option value="no">No necesito electricidad</option>
+                <option value="si-baja">Sí, solo Iluminación LED (Bajo consumo)</option>
+                <option value="si-alta">Sí, consumo alto (Gastronomía / Electrodomésticos)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="fotos-producto">Subí 3 fotos optimizadas de tus productos (Formato JPG/PNG) *</label>
+            <input type="file" id="fotos-producto" name="fotos_producto[]" accept="image/*" multiple required>
+            <small class="input-help">Como pauta de diseño, procurá fotos con buena iluminación para tu vitrina digital.</small>
+        </div>
+    </fieldset>
+
+    <!-- Términos y Envío -->
+    <div class="form-actions">
+        <label class="terms-label">
+            <input type="checkbox" name="aceptar_bases" required> Acepto las bases de convivencia y horarios de Roda Multiespacio.
+        </label>
+        <button type="submit" class="btn-submit-coral">Enviar Solicitud de Registro</button>
+    </div>
+</form>
+<style> /* Estilos de Marca - Roda Multiespacio */ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #F1FAEE; /* Blanco Hueso */ color: #1D3557; /* Azul Profundo */ margin: 0; padding: 20px; display: flex; justify-content: center; } .form-container { background: #ffffff; max-width: 600px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(29, 53, 87, 0.1); } .section-title { font-size: 1.2rem; font-weight: bold; color: #1D3557; padding: 
+0 10px; border-left: 4px solid #E63946; /* Rojo Coral */ } .form-section { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; } .input-group { margin-bottom: 15px; } .input-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; } .input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; } .input-group input:focus, .input-group select:focus { outline: none; border-color: #E63946; } .input-group-checkbox label { display: block; margin-bottom: 8px; font-size: 0.95rem; } .input-help { color: #666; font-size: 0.8rem; display: block; margin-top: 4px; } .btn-submit-coral { background-color: #E63946; color: white; border: none; padding: 12px 24px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.2s ease; margin-top: 15px; } .btn-submit-coral:hover { background-color: #b82d38; } .terms-label { font-size: 0.85rem; display: block; margin-bottom: 10px; } </style>
